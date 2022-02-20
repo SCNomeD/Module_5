@@ -37,9 +37,9 @@ namespace Unit_1
             return result;
         }
         static string GetDataFromConsole() => Console.ReadLine();
-        static string ShowColor(string username)
+        static string ShowColor(string username, int userage)
         {
-            Console.WriteLine("{0} Напишите свой любимый цвет на английском с маленькой буквы", username);
+            Console.WriteLine("{0} {1} лет\nНапишите свой любимый цвет на английском с маленькой буквы", username, userage);
             var color = Console.ReadLine();
 
             switch (color)
@@ -99,7 +99,7 @@ namespace Unit_1
             var favcolors = new string[3];
             for (int i = 0; i < favcolors.Length; i++)
             {
-                favcolors[i] = ShowColor(anketa.name);
+                favcolors[i] = ShowColor(anketa.name, anketa.age);
             }
 
             Console.WriteLine("Ваши любимые цвета:");
