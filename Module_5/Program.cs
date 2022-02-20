@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Module_5
+namespace Introduction
 {
     class Program
     {
