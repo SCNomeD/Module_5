@@ -76,6 +76,7 @@ namespace Unit_1
 
         static void Main(string[] args)
         {
+            #region
             //GetArrayFromConsole();
             //Console.WriteLine();
 
@@ -83,6 +84,7 @@ namespace Unit_1
 
             //Console.WriteLine("Мое имя: {0}", name);
             //Console.WriteLine("Мой возраст: {0}", age);
+            #endregion
 
             (string name, int age) anketa;
 
