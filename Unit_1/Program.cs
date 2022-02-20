@@ -104,7 +104,7 @@ namespace Unit_1_2
                 Console.WriteLine(color);
             }
 
-            Console.ReadLine();
+            Console.ReadLine(); 
         }
     }
 }
