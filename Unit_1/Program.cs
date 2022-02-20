@@ -14,6 +14,10 @@ namespace Unit_1
                 result[i] = int.Parse(Console.ReadLine());
             }
 
+            return result;
+        }
+        static int[] SortArray(int[] result)
+        {
             int temp;
 
             for (int i = 0; i < result.Length; i++)
@@ -27,11 +31,6 @@ namespace Unit_1
                         result[j] = temp;
                     }
                 }
-            }
-
-            foreach (var item in result)
-            {
-                Console.Write(item);
             }
 
             return result;
