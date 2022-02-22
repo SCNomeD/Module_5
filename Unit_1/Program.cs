@@ -76,6 +76,34 @@ namespace Unit_1_2
                 foreach (var color in favcolors)
                 {
                     Console.WriteLine(color);
+                    switch (color)
+                    {
+                        case "red":
+                            Console.BackgroundColor = ConsoleColor.Red;
+                            Console.ForegroundColor = ConsoleColor.Black;
+
+                            Console.WriteLine("Your color is red!");
+                            break;
+
+                        case "green":
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Black;
+
+                            Console.WriteLine("Your color is green!");
+                            break;
+                        case "cyan":
+                            Console.BackgroundColor = ConsoleColor.Cyan;
+                            Console.ForegroundColor = ConsoleColor.Black;
+
+                            Console.WriteLine("Your color is cyan!");
+                            break;
+                        default:
+                            Console.BackgroundColor = ConsoleColor.Yellow;
+                            Console.ForegroundColor = ConsoleColor.Red;
+
+                            Console.WriteLine("Your color is yellow!");
+                            break;
+                    }
                 }
             }
         }
@@ -103,10 +131,13 @@ namespace Unit_1_2
             var favcolor = new string[3];
             for (int i = 0; i < favcolor.Length; i++)
             {
-                ShowColor();
+                Console.WriteLine("{0} {1} лет\nВведите ваш любимый цвет: ", anketa.name, anketa.age);
+                favcolor[i] = Console.ReadLine();
             }
 
-            Console.ReadLine(); 
+            ShowColor(favcolor);
+
+            Console.ReadLine();
         }
     }
 }
