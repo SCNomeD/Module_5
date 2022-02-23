@@ -36,7 +36,7 @@ namespace Unit_1_2
             return result;
         }
         static string GetDataFromConsole() => Console.ReadLine();
-        static void ShowColor(params string[] favcolors)
+        static void ShowColor(string username, params string[] favcolors)
         {
             #region
             //Console.WriteLine("{0} {1} лет\nНапишите свой любимый цвет на английском с маленькой буквы", username, userage);
@@ -72,7 +72,7 @@ namespace Unit_1_2
             //}
             #endregion
             {
-                Console.WriteLine("Ваши любимые цвета:");
+                Console.WriteLine("{0} Ваши любимые цвета:", username);
                 foreach (var color in favcolors)
                 {
                     Console.WriteLine(color);
@@ -84,11 +84,6 @@ namespace Unit_1_2
             #region
             //GetArrayFromConsole();
             //Console.WriteLine();
-
-            //var (name, age) = ("Евгения", 27);
-
-            //Console.WriteLine("Мое имя: {0}", name);
-            //Console.WriteLine("Мой возраст: {0}", age);
             #endregion
             (string name, int age) anketa;
 
@@ -136,7 +131,7 @@ namespace Unit_1_2
                 }
             }
 
-            ShowColor(favcolor);
+            ShowColor(anketa.name, favcolor);
 
             Console.ReadLine();
         }
