@@ -109,10 +109,10 @@ namespace Unit_3
         static void Main(string[] args)
         {
             #region
-            Console.WriteLine("Введите размерность массива: ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            var array = GetArrayFromConsole(ref num);
-            ShowArray(array, true);
+            //Console.WriteLine("Введите размерность массива: ");
+            //int num = Convert.ToInt32(Console.ReadLine());
+            //var array = GetArrayFromConsole(ref num);
+            //ShowArray(array, true);
             #endregion
             #region
             //(string name, int age) anketa;
@@ -170,6 +170,17 @@ namespace Unit_3
             //BigDataOperation(arr, ref data);
 
             //Console.WriteLine(arr[0]);
+            #endregion
+            #region
+            var someName = "Анна";
+            Console.WriteLine(someName);
+            ChangeName(ref someName);
+            Console.WriteLine(someName);
+
+            var someAge = 25;
+            Console.WriteLine(someAge);
+            ChangeAge(ref someAge);
+            Console.WriteLine(someAge);
             #endregion
             Console.ReadLine();
         }
