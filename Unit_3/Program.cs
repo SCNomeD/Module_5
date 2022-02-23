@@ -4,8 +4,9 @@ namespace Unit_3
 {
     class Program
     {
-        static void ChangeName(ref string name)
+        static void ChangeName(out string name, out string oldname)
         {
+            oldname = "Владимир";
             Console.WriteLine("Введите имя: ");
             name = Console.ReadLine();
         }
@@ -172,9 +173,12 @@ namespace Unit_3
             //Console.WriteLine(arr[0]);
             #endregion
             #region
+            var oldName = "Анна";
             var someName = "Анна";
+            Console.WriteLine(oldName);
             Console.WriteLine(someName);
-            ChangeName(ref someName);
+            ChangeName(out someName, out oldName);
+            Console.WriteLine(oldName);
             Console.WriteLine(someName);
 
             var someAge = 25;
