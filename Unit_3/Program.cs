@@ -32,7 +32,12 @@ namespace Unit_3
 
             return result;
         }
-        static int[] SortArray(int[] result)
+        static int[] SortArray(in int[] array, out int[] sorteddesc, out int[] sortedasc)
+        {
+            sorteddesc = SortArrayDesc(array);
+            sortedasc = SortArrayAsc(array);
+        }
+        static int[] SortArrayAsc(int[] result)
         {
             int temp;
 
@@ -41,6 +46,25 @@ namespace Unit_3
                 for (int j = i + 1; j < result.Length; j++)
                 {
                     if (result[i] > result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+
+            return result;
+        }
+        static int[] SortArrayDesc(int[] result)
+        {
+            int temp;
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] < result[j])
                     {
                         temp = result[i];
                         result[i] = result[j];
@@ -110,10 +134,10 @@ namespace Unit_3
         static void Main(string[] args)
         {
             #region
-            //Console.WriteLine("Введите размерность массива: ");
-            //int num = Convert.ToInt32(Console.ReadLine());
-            //var array = GetArrayFromConsole(ref num);
-            //ShowArray(array, true);
+            Console.WriteLine("Введите размерность массива: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            var array = GetArrayFromConsole(ref num);
+            ShowArray(array, true);
             #endregion
             #region
             //(string name, int age) anketa;
@@ -173,18 +197,18 @@ namespace Unit_3
             //Console.WriteLine(arr[0]);
             #endregion
             #region
-            var oldName = "Анна";
-            var someName = "Анна";
-            Console.WriteLine(oldName);
-            Console.WriteLine(someName);
-            ChangeName(out someName, out oldName);
-            Console.WriteLine(oldName);
-            Console.WriteLine(someName);
+            //var oldName = "Анна";
+            //var someName = "Анна";
+            //Console.WriteLine(oldName);
+            //Console.WriteLine(someName);
+            //ChangeName(out someName, out oldName);
+            //Console.WriteLine(oldName);
+            //Console.WriteLine(someName);
 
-            var someAge = 25;
-            Console.WriteLine(someAge);
-            ChangeAge(ref someAge);
-            Console.WriteLine(someAge);
+            //var someAge = 25;
+            //Console.WriteLine(someAge);
+            //ChangeAge(ref someAge);
+            //Console.WriteLine(someAge);
             #endregion
             Console.ReadLine();
         }
