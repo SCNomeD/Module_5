@@ -21,17 +21,60 @@ namespace Unit_5
 				Echo(modif, deep - 1);
 			}
 		}
+		static decimal Factorial(int x)
+        {
+			if (x == 0)
+			{
+				return 1;
+			}
+			else
+			{
+				return x * Factorial(x - 1);
+			}
+		}
+		private static int PowerUp(int N, byte pow)
+        {
+			if (pow == 0)
+            {
+				return 1;
+			}
+			else
+            {
+                if (pow == 1)
+                {
+					return N;
+                }
+				else
+                {
+					return N * PowerUp(N, --pow);
+                }
+            }
+		}
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Напишите что-то");
-			var str = Console.ReadLine();
+            #region
+            //Console.WriteLine("Напишите что-то");
+            //var str = Console.ReadLine();
 
-			Console.WriteLine("Укажите глубину эха");
-			var deep = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Укажите глубину эха");
+            //var deep = int.Parse(Console.ReadLine());
 
-			Echo(str, deep);
+            //Echo(str, deep);
+            #endregion
+            #region
+            //Console.WriteLine("Введите число для вычисления факториала: ");
+            //var x = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Результат вычисления факториала: ");
+            //Console.WriteLine(Factorial(x));
+            #endregion
+            Console.WriteLine("Введите исходное число: ");
+			int N = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("Введите степень: ");
+			byte pow = Convert.ToByte(Console.ReadLine());
 
-			Console.ReadKey();
+			Console.WriteLine(PowerUp(N, pow));
+
+			Console.ReadLine();
 		}
 	}
 }
